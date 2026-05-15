@@ -1,0 +1,52 @@
+<mvsim_world version="1.0">
+    <simul_timestep>0.01</simul_timestep>
+
+    <block name="planta_1">
+        <init_pose>2 1 0</init_pose>
+        <shape><pt>0.2 0.2</pt><pt>-0.2 0.2</pt><pt>-0.2 -0.2</pt><pt>0.2 -0.2</pt></shape>
+        <color>#00FF00</color>
+        <mass>100</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+    
+    <block name="planta_2">
+        <init_pose>2 -1 0</init_pose>
+        <shape><pt>0.2 0.2</pt><pt>-0.2 0.2</pt><pt>-0.2 -0.2</pt><pt>0.2 -0.2</pt></shape>
+        <color>#00FF00</color>
+        <mass>100</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+
+    <vehicle name="base_footprint">
+        <init_pose>0 0 0</init_pose>
+        <chassis_shape>
+            <pt>0.3 0.2</pt><pt>-0.3 0.2</pt><pt>-0.3 -0.2</pt><pt>0.3 -0.2</pt>
+        </chassis_shape>
+
+        <dynamics class="differential">
+            <chassis_mass>15.0</chassis_mass>
+            <l_wheel_pos>0 0.25</l_wheel_pos>
+            <r_wheel_pos>0 -0.25</r_wheel_pos>
+            <wheel_radius>0.1</wheel_radius>
+        </dynamics>
+
+        <controller class="twist_ideal">
+            <V_max>2.0</V_max>
+            <W_max>2.0</W_max>
+        </controller>
+
+        <publish>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_odom_topic>true</publish_odom_topic>
+        </publish>
+
+        <sensor class="laser" name="scan">
+            <pose>0.2 0 0.15</pose>
+            <fov>270</fov>
+            <range>10.0</range>
+            <publish>
+                <publish_topic>true</publish_topic>
+            </publish>
+        </sensor>
+    </vehicle>
+</mvsim_world>
