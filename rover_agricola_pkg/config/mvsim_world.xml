@@ -17,6 +17,40 @@
         <kinematics>fixed</kinematics>
     </block>
 
+    <block name="muro_norte">
+        <init_pose>2.5 3 0</init_pose>
+        <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
+        <color>#888888</color>
+        <mass>1000</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+    
+    <block name="muro_sur">
+        <init_pose>2.5 -3 0</init_pose>
+        <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
+        <color>#888888</color>
+        <mass>1000</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+    
+    <block name="muro_este">
+        <init_pose>7 0 0</init_pose>
+        <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
+        <color>#888888</color>
+        <mass>1000</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+    
+    <block name="muro_oeste">
+        <init_pose>-2 0 0</init_pose>
+        <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
+        <color>#888888</color>
+        <mass>1000</mass>
+        <kinematics>fixed</kinematics>
+    </block>
+
+    
+
     <vehicle name="base_footprint">
         <init_pose>0 0 0</init_pose>
         <chassis_shape>
