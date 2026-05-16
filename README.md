@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/c325a543-d4b6-4feb-9d58-29c5bac145a0
+
 # 🚜 Rover Agrícola Autónomo con ROS 2 Humble y MVSim
 
 Este repositorio contiene el proyecto final de robótica móvil, consistente en una Prueba de Concepto (PoC) para la navegación autónoma de un rover agrícola. El sistema simula un entorno de huerto o invernadero utilizando modelos 3D y texturas realistas, sobre el cual el robot es capaz de localizarse y calcular trayectorias libres de colisiones.
