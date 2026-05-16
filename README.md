@@ -147,3 +147,5 @@ ros2 run nav2_map_server map_saver_cli -f campo_map
 
 A continuación se muestra la demostración completa del sistema en funcionamiento, donde se puede observar la sincronización entre la planificación de rutas en RViz y la ejecución física del rover en MVSim:
 
+<video src="media/nav_rover.webm" controls width="100%"></video>
+
