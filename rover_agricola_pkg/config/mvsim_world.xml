@@ -1,61 +1,62 @@
 <mvsim_world version="1.0">
     <simul_timestep>0.01</simul_timestep>
 
-    <block name="planta_1">
-        <init_pose>2 1 0</init_pose>
-        <shape><pt>0.2 0.2</pt><pt>-0.2 0.2</pt><pt>-0.2 -0.2</pt><pt>0.2 -0.2</pt></shape>
-        <color>#00FF00</color>
-        <mass>100</mass>
-        <kinematics>fixed</kinematics>
-    </block>
-    
-    <block name="planta_2">
-        <init_pose>2 -1 0</init_pose>
-        <shape><pt>0.2 0.2</pt><pt>-0.2 0.2</pt><pt>-0.2 -0.2</pt><pt>0.2 -0.2</pt></shape>
-        <color>#00FF00</color>
-        <mass>100</mass>
-        <kinematics>fixed</kinematics>
-    </block>
+    <block:class name="clase_tomate">
+        <static>true</static>
+        <mass>5</mass>
+        <shape_from_visual/> 
+        <visual>
+            <model_uri>https://mrpt.github.io/mvsim-models/greenhouse.zip/greenhouse/tomato_plant_240cm.dae</model_uri>
+            <model_roll>90.0</model_roll>
+            <model_offset_z>-0.05</model_offset_z>
+        </visual>
+    </block:class>
 
     <block name="muro_norte">
         <init_pose>2.5 3 0</init_pose>
         <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
-        <color>#888888</color>
-        <mass>1000</mass>
-        <kinematics>fixed</kinematics>
+        <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
-    
     <block name="muro_sur">
         <init_pose>2.5 -3 0</init_pose>
         <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
-        <color>#888888</color>
-        <mass>1000</mass>
-        <kinematics>fixed</kinematics>
+        <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
-    
     <block name="muro_este">
         <init_pose>7 0 0</init_pose>
         <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
-        <color>#888888</color>
-        <mass>1000</mass>
-        <kinematics>fixed</kinematics>
+        <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
-    
     <block name="muro_oeste">
         <init_pose>-2 0 0</init_pose>
         <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
-        <color>#888888</color>
-        <mass>1000</mass>
-        <kinematics>fixed</kinematics>
+        <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
 
-    
+    <block class="clase_tomate" name="linea1_planta1">
+        <init_pose>2 1 0</init_pose>
+    </block>
+    <block class="clase_tomate" name="linea1_planta2">
+        <init_pose>4 1 0</init_pose>
+    </block>
+
+    <block class="clase_tomate" name="linea2_planta1">
+        <init_pose>2 0 0</init_pose>
+    </block>
+    <block class="clase_tomate" name="linea2_planta2">
+        <init_pose>4 0 0</init_pose>
+    </block>
+
+    <block class="clase_tomate" name="linea3_planta1">
+        <init_pose>2 -1 0</init_pose>
+    </block>
+    <block class="clase_tomate" name="linea3_planta2">
+        <init_pose>4 -1 0</init_pose>
+    </block>
 
     <vehicle name="base_footprint">
         <init_pose>0 0 0</init_pose>
-        <chassis_shape>
-            <pt>0.3 0.2</pt><pt>-0.3 0.2</pt><pt>-0.3 -0.2</pt><pt>0.3 -0.2</pt>
-        </chassis_shape>
+        <chassis_shape><pt>0.3 0.2</pt><pt>-0.3 0.2</pt><pt>-0.3 -0.2</pt><pt>0.3 -0.2</pt></chassis_shape>
 
         <dynamics class="differential">
             <chassis_mass>15.0</chassis_mass>
@@ -63,7 +64,6 @@
             <r_wheel_pos>0 -0.25</r_wheel_pos>
             <wheel_radius>0.1</wheel_radius>
             <wheel_mass>1.0</wheel_mass>
-
             <controller class="twist_ideal">
                 <max_V>2.0</max_V>
                 <max_W>2.0</max_W>
@@ -79,9 +79,7 @@
             <pose>0.2 0 0.15</pose>
             <fov>270</fov>
             <range>10.0</range>
-            <publish>
-                <publish_topic>true</publish_topic>
-            </publish>
+            <publish><publish_topic>true</publish_topic></publish>
         </sensor>
     </vehicle>
 </mvsim_world>
