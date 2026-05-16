@@ -1,6 +1,22 @@
 <mvsim_world version="1.0">
     <simul_timestep>0.01</simul_timestep>
 
+    <element class="horizontal_plane">
+        <cull_face>BACK</cull_face>
+        <x_min>-5</x_min> <y_min>-5</y_min>
+        <x_max>10</x_max> <y_max>5</y_max>
+        <z>0.0</z>
+        <texture>https://mrpt.github.io/mvsim-models/textures-cgbookcase/Dirt01_512_BaseColor.png</texture>
+        <texture_size_x>1.5</texture_size_x>
+        <texture_size_y>1.5</texture_size_y>
+    </element>
+
+    <lights>
+        <enable_shadows>true</enable_shadows>
+        <light_azimuth_deg>160.0</light_azimuth_deg>
+        <light_elevation_deg>40.0</light_elevation_deg>
+    </lights>
+
     <block:class name="clase_tomate">
         <static>true</static>
         <mass>5</mass>
@@ -13,45 +29,41 @@
     </block:class>
 
     <block name="muro_norte">
-        <init_pose>2.5 3 0</init_pose>
-        <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
+        <init_pose>2.5 5 0</init_pose>
+        <shape><pt>7.5 0.2</pt><pt>-7.5 0.2</pt><pt>-7.5 -0.2</pt><pt>7.5 -0.2</pt></shape>
         <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
+    
     <block name="muro_sur">
-        <init_pose>2.5 -3 0</init_pose>
-        <shape><pt>4.5 0.2</pt><pt>-4.5 0.2</pt><pt>-4.5 -0.2</pt><pt>4.5 -0.2</pt></shape>
+        <init_pose>2.5 -5 0</init_pose>
+        <shape><pt>7.5 0.2</pt><pt>-7.5 0.2</pt><pt>-7.5 -0.2</pt><pt>7.5 -0.2</pt></shape>
         <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
+    
     <block name="muro_este">
-        <init_pose>7 0 0</init_pose>
-        <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
+        <init_pose>10 0 0</init_pose>
+        <shape><pt>0.2 5.0</pt><pt>-0.2 5.0</pt><pt>-0.2 -5.0</pt><pt>0.2 -5.0</pt></shape>
         <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
+    
     <block name="muro_oeste">
-        <init_pose>-2 0 0</init_pose>
-        <shape><pt>0.2 3.2</pt><pt>-0.2 3.2</pt><pt>-0.2 -3.2</pt><pt>0.2 -3.2</pt></shape>
+        <init_pose>-5 0 0</init_pose>
+        <shape><pt>0.2 5.0</pt><pt>-0.2 5.0</pt><pt>-0.2 -5.0</pt><pt>0.2 -5.0</pt></shape>
         <color>#888888</color><mass>1000</mass><kinematics>fixed</kinematics>
     </block>
 
     <block class="clase_tomate" name="linea1_planta1">
-        <init_pose>2 1 0</init_pose>
+        <init_pose>2 2 0</init_pose>
     </block>
     <block class="clase_tomate" name="linea1_planta2">
-        <init_pose>4 1 0</init_pose>
-    </block>
-
-    <block class="clase_tomate" name="linea2_planta1">
-        <init_pose>2 0 0</init_pose>
-    </block>
-    <block class="clase_tomate" name="linea2_planta2">
-        <init_pose>4 0 0</init_pose>
+        <init_pose>6 2 0</init_pose>
     </block>
 
     <block class="clase_tomate" name="linea3_planta1">
-        <init_pose>2 -1 0</init_pose>
+        <init_pose>2 -2 0</init_pose>
     </block>
     <block class="clase_tomate" name="linea3_planta2">
-        <init_pose>4 -1 0</init_pose>
+        <init_pose>6 -2 0</init_pose>
     </block>
 
     <vehicle name="base_footprint">
