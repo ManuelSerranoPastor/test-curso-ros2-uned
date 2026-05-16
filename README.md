@@ -18,46 +18,20 @@ A continuación se muestra la organización de los archivos principales del paqu
 ```text
 
 .
-├── curso_pgk_init
-│   ├── curso_pgk_init
-│   │   ├── __init__.py
-│   │   ├── my_node.py
-│   │   └── __pycache__
-│   │       ├── __init__.cpython-310.pyc
-│   │       └── my_node.cpython-310.pyc
-│   ├── package.xml
-│   ├── resource
-│   │   └── curso_pgk_init
-│   ├── setup.cfg
-│   ├── setup.py
-│   └── test
-│       ├── test_copyright.py
-│       ├── test_flake8.py
-│       └── test_pep257.py
-├── LICENSE
 ├── README.md
 └── rover_agricola_pkg
     ├── CMakeLists.txt
-    ├── config
-    │   ├── mvsim_world_1.xml
-    │   ├── mvsim_world.xml
-    │   ├── nav2_params.yaml
-    │   ├── tree
-    │   ├── tree.dae
-    │   ├── tree.obj
-    │   └── tree.zip
-    ├── include
-    │   └── rover_agricola_pkg
-    ├── launch
-    │   ├── navegacion.launch.py
-    │   ├── rover_sim.launch.py
-    │   └── ver_robot.launch.py
-    ├── maps
-    │   ├── campo_map.pgm
-    │   └── campo_map.yaml
     ├── package.xml
-    ├── rviz
-    ├── src
+    ├── config
+    │   ├── mvsim_world.xml
+    │   └── nav2_params.yaml
+    ├── launch
+    │   ├── navegacion.launch.py
+    │   └── rover_sim.launch.py
+    ├── maps
+    │   ├── campo_map.pgm
+    │   └── campo_map.yaml
+    ├── src/
     └── urdf
         └── rover.urdf.xacro
 ```
@@ -163,7 +137,7 @@ El mapa estático proporcionado en este repositorio fue generado previamente med
 4. Guardar la topología del entorno utilizando la herramienta estándar de ROS 2:
 
 ```bash
-ros2 run nav2_map_server map_saver_cli -f mapa_agricola
+ros2 run nav2_map_server map_saver_cli -f campo_map
 ```
 
 ---
